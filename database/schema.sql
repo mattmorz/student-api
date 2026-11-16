@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS student_api
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE student_api;
+
+CREATE TABLE IF NOT EXISTS students (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(80) NOT NULL,
+    middle_initial CHAR(1) NULL,
+    last_name VARCHAR(80) NOT NULL,
+    program ENUM('BSIT', 'BSIS', 'BSCS') NOT NULL,
+    year_level TINYINT UNSIGNED NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT chk_year_level CHECK (year_level BETWEEN 1 AND 4)
+);

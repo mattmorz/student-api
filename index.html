@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Records Viewer</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search name or program...">
+
+      <select id="sortSelect">
+        <option value="default">Sort: Default</option>
+        <option value="first-asc">First Name: A–Z</option>
+        <option value="first-desc">First Name: Z–A</option>
+        <option value="last-asc">Last Name: A–Z</option>
+        <option value="last-desc">Last Name: Z–A</option>
+        <option value="year-asc">Year Level: Lowest to Highest</option>
+        <option value="year-desc">Year Level: Highest to Lowest</option>
+      </select>
+
+      <select id="programFilter">
+        <option value="all">All Programs</option>
+        <option value="BSIT">BSIT</option>
+        <option value="BSIS">BSIS</option>
+        <option value="BSCS">BSCS</option>
+      </select>
+
+      <select id="yearFilter">
+        <option value="all">All Year Levels</option>
+        <option value="1">Year 1</option>
+        <option value="2">Year 2</option>
+        <option value="3">Year 3</option>
+        <option value="4">Year 4</option>
+      </select>
+
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <p id="recordCount">Total records: 0</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+            <th>Program</th>
+            <th>Year Level</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <p id="message"></p>
+
+    <div class="pagination">
+      <button id="prevBtn">Previous</button>
+      <span id="pageInfo">Page 1 of 1</span>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

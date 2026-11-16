@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "Student Records API (PHP PDO)",
+    "description": "CRUD requests for the IT 110 Student Records API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "studentId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Read all students",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/students.php"
+      }
+    },
+    {
+      "name": "Read one student",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/students.php?id={{studentId}}"
+      }
+    },
+    {
+      "name": "Create student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Alyssa\",\n  \"middle_initial\": \"M\",\n  \"last_name\": \"Reyes\",\n  \"program\": \"BSIT\",\n  \"year_level\": 1\n}"
+        },
+        "url": "{{baseUrl}}/api/students.php"
+      }
+    },
+    {
+      "name": "Update student (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Alyssa\",\n  \"middle_initial\": \"M\",\n  \"last_name\": \"Reyes\",\n  \"program\": \"BSCS\",\n  \"year_level\": 2\n}"
+        },
+        "url": "{{baseUrl}}/api/students.php?id={{studentId}}"
+      }
+    },
+    {
+      "name": "Delete student",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/students.php?id={{studentId}}"
+      }
+    }
+  ]
+}

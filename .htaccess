@@ -1,0 +1,7 @@
+# Optional Apache hardening. Keep config and scripts outside the public
+# document root in a production deployment.
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
